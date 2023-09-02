@@ -3,7 +3,19 @@ import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
-        first_task();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Выберите номер задания от 1 до 2:");
+        int a = in.nextInt();
+        switch (a) {
+            case 1:
+                first_task();
+                break;
+            case 2:
+                second_task();
+                break;
+            default:
+                System.out.println("Вы выбрали задание, номер которого не существует, запустите программу заново");
+        }
     }
     public static void first_task() {
         System.out.println("Введите размер массива:");
@@ -21,5 +33,22 @@ public class Main {
         System.out.println("Сумма элементов массива: " + sum);
         System.out.println("Среднее арифметическое числе в массиве: " + sr);
         System.out.println("Всего Вам доброго!");
+    }
+    public static void second_task() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите строку, которую хотите перевернуть:");
+        String line = in.nextLine();
+        char[] arr = line.toCharArray();
+        int begin = 0;
+        int end = arr.length - 1;
+        char temp;
+        while(end > begin){
+            temp = arr[begin];
+            arr[begin] = arr[end];
+            arr[end] = temp;
+            end--;
+            begin++;
+        }
+        System.out.println("Новая строка: " + new String(arr));
     }
 }
