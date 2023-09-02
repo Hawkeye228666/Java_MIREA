@@ -51,4 +51,5 @@ public class Main {
         }
         System.out.println("Новая строка: " + new String(arr));
     }
+    public static void third_task(){}
 }
