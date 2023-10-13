@@ -1,46 +1,31 @@
 import java.util.Scanner;
 public class CurrencyConverter {
     public static double func(String c) {
-        double ans = 0;
-        switch (c) {
-            case "USD":
-                ans = 1.00;
-                break;
-            case "EUR":
-                ans = 0.85;
-                break;
-            case "GBP":
-                ans = 0.76;
-                break;
-            case "JPY":
-                ans = 109.20;
-                break;
-            case "AUD":
-                ans = 1.36;
-                break;
-            case "CAD":
-                ans = 1.31;
-                break;
-            case "CHF":
-                ans = 0.91;
-                break;
-            case "CNY":
-                ans = 6.46;
-                break;
-            default:
+        double ans = switch (c) {
+            case "RUB" -> 100;
+            case "USD" -> 1.00;
+            case "EUR" -> 0.85;
+            case "GBP" -> 0.76;
+            case "JPY" -> 109.20;
+            case "AUD" -> 1.36;
+            case "CAD" -> 1.31;
+            case "CHF" -> 0.91;
+            case "CNY" -> 6.46;
+            default -> {
                 System.out.println("Такой валюты нет.");
-                ans = 0;
-        }
+                yield 0;
+            }
+        };
         return ans;
     }
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        System.out.print("Введите сумму: ");
+        System.out.print("Введите сумму(натуральное число): ");
         double amount = in.nextDouble();
-        System.out.print("Введите изначальную валюту (USD, EUR, GBP, JPY, AUD, CAD, CHF, CNY): ");
+        System.out.print("Введите изначальную валюту (RUB, USD, EUR, GBP, JPY, AUD, CAD, CHF, CNY): ");
         String currencyCode1 = in.next().toUpperCase();
-        System.out.print("Введите валюту, в которую хотите перевести (USD, EUR, GBP, JPY, AUD, CAD, CHF, CNY): ");
+        System.out.print("Введите валюту, в которую хотите перевести (RUB, USD, EUR, GBP, JPY, AUD, CAD, CHF, CNY): ");
         String currencyCode2 = in.next().toUpperCase();
 
         double rate = func(currencyCode1);

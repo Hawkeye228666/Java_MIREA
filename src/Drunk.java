@@ -11,11 +11,9 @@ public class Drunk {
         first = in.nextLine();
         second = in.nextLine();
         for (int i = 0; i < 5; i++) {
-            int a = Integer.parseInt(String.valueOf(first.charAt(i)));
                 player1.add(i);
         }
         for (int i = 0; i < 5; i++) {
-            int a = Integer.parseInt(String.valueOf(second.charAt(i)));
             player2.add(i);
         }
         int round = 1;
@@ -33,10 +31,8 @@ public class Drunk {
             }
             round++;
         }
-        if (player1.isEmpty()) {
-            System.out.println("Player 2 wins the game at the end of " + round + "th round!");
-        } else {
-            System.out.println("Player 1 wins the game at the end of " + round + "th round!" );
+        if (player1.isEmpty()) { System.out.println("Player 2 wins the game at the end of " + round + "th round!");
+        } else { System.out.println("Player 1 wins the game at the end of " + round + "th round!" );
         }
     }
 }

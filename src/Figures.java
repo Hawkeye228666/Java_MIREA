@@ -54,17 +54,13 @@ class Rectangle extends Shape {
 
 class ShapePanel extends JPanel {
     private Shape[] shapes = new Shape[20];
-
     public ShapePanel() {
         for (int i = 0; i < shapes.length; i++) {
-            if (i % 2 == 0) {
-                shapes[i] = new Circle();
-            } else {
-                shapes[i] = new Rectangle();
+            if (i % 2 == 0) { shapes[i] = new Circle();
+            } else { shapes[i] = new Rectangle();
             }
         }
     }
-
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
